@@ -1,12 +1,25 @@
 body {
+    font-size:60px;
+    color:white;
+    background-color:#394153;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    height:200px;
+    background-color:rgb(160, 231, 231);
+    font-family:monospace;
+    font-size:50px;
+    border-radius:50px;
 }
 
 h2 {
     margin: 0 auto;
+    color:black;
+    background-color:rgb(160, 231, 231);
     font-size: 35px;
-    margin: 10px;
+    margin:10px;
+    border-radius:50px;
 }
 
 .flex-container {
@@ -36,6 +49,7 @@ h2 {
     border: 2px solid rgba(0,0,0,.75);
     height: 140px;
     width: 140px;
+    background-color:#da5a8b;
 }
 #reset-button {
     text-align: center;

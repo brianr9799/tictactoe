@@ -19,12 +19,16 @@ let turn = 'X';
 
 let win;
 
+let x = 0;
+let o = 0;
+
 /*----- cached element references ----- */
 
 const squares = 
 Array.from(document.querySelectorAll('#board div'));
 
 const messages = document.querySelector('h2');
+const scores = document.querySelector('h3');
 /*----- event listeners ----- */
 
 document.getElementById('board').addEventListener('click', handleTurn);
@@ -52,6 +56,7 @@ function render () {
         //console.log(mark, index);
     });
     messages.textContent = win === 'T' ? `That's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    scores.textContent = `X:${x} O:${o}`;
 };
 
 function handleTurn(event) {
@@ -67,6 +72,7 @@ function handleTurn(event) {
 
 
     render();
+    scoreboard();
 };
 
 function getWinner() {
@@ -81,3 +87,13 @@ function getWinner() {
     });
     return winner ? winner : board.includes('') ? null : 'T';
 };
+
+function scoreboard() {
+    if (win === 'X'){
+        x+=1;
+        console.log('X'+ x);
+    } else if (win === 'O'){
+        o+=1;
+        console.log('O'+ o);
+    }
+}
